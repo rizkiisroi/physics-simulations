@@ -1,4 +1,8 @@
-#set terminal to eps
+#this is GNUPLOT script related to parabolic-motions.cpp
+#to create simulations of particle in parabolic motions
+#Alamsyah Rizki Isroi (rizkiisroi@live.com)
+#Physics Department, Bandung Institute of Technology
+#set terminal to gif
 set term gif size 640,480 animate delay 3
 
 set bmargin 3.5

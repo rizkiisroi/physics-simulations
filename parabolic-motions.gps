@@ -1,0 +1,29 @@
+#set terminal to eps
+set term gif size 640,480 animate delay 3
+
+set bmargin 3.5
+
+set xlabel "x (m)"
+set xtics 25
+set xrange [0:225]
+
+set ylabel "y (m)"
+set ytics 5
+set yrange [0:75]
+set grid xtics ytics
+
+#set input
+input = "parabolic.txt"
+
+set output "rizkiisroi-parabolic.gif"
+
+#plot data
+dt = 0.05
+t = 0.00
+do for [i=0:138] {
+	timestamp = sprintf("t = %1.2f s, ymax = 56 m", t);
+	unset label
+	set label timestamp at 125, 66 font ", 14"
+	plot input every ::i::i title "" w p ps 4 pt 7
+	t = t + dt
+}
